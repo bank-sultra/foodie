@@ -1,9 +1,32 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-export default function InputText() { 
+import { StyleSheet } from 'react-native';
+import { Input } from '@rneui/themed';
+export default function InputText({placeholder, value, onChangeText, secureTextEntry=false}) {
+    
+
    return (
-       <View>
-           <Text>InputText </Text>
-       </View>
+    <Input
+        placeholder={placeholder}
+        placeholderTextColor='black'
+        color='#C7CBCC'
+        style={styles.inputText} 
+        inputContainerStyle={styles.inputContainerStyle} 
+        value={value}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+    />
    );
 };
+
+const styles = StyleSheet.create({
+    inputText:{
+        backgroundColor:'#313842',
+        borderRadius:20,
+        borderWidth:2, 
+        padding:20
+    },
+    inputContainerStyle:{
+        borderBottomWidth:0,
+    }
+    
+});

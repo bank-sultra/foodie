@@ -1,52 +1,38 @@
-import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import { Text, StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';  
-import { Text, Input, Button } from '@rneui/themed';
+// import { Text, Input, Button } from '@rneui/themed';
 import { useNavigation } from "@react-navigation/native";
+import InputText from '../../../components/InputText';
+import BtnAction from '../../../components/BtnAction';
 
 
 
 
 export default function Login() {
     const {navigate} = useNavigation();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const handlerLogin = () => {
         navigate('HomeNav');
         console.log('Login');
     }
+    
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.containerView}>
                 <Text style={styles.titlePage}>Foody </Text> 
-                <Input
-                    placeholder='Email'
-                    placeholderTextColor='black'
-                    color='#C7CBCC'
-                    style={styles.inputText} 
-                    inputContainerStyle={{borderBottomWidth:0}} 
-                />
-
-                <Input 
-                    placeholder='Email'
-                    placeholderTextColor='black'
-                    color='#C7CBCC'
-                    style={styles.inputText} 
-                    inputContainerStyle={{borderBottomWidth:0}} 
-                    secureTextEntry={true} 
-                />
-
-                <Text style={{marginVertical:20, fontSize:20, color:'#C7CBCC'}}>
+                
+                <InputText placeholder='Email' value={email} onChangeText={setEmail} />
+                <InputText placeholder='Password' value={password} onChangeText={setPassword} secureTextEntry={true}/>
+                
+                <Text style={styles.text}>
                     Forgot Password
                 </Text>
 
-                <Button
-                    title="LOG IN"
-                    buttonStyle={styles.btnStyle}
-                    containerStyle={styles.btnContainerStyle}
-                    titleStyle={{ fontWeight: 'bold' }}
-                    onPress={handlerLogin}
-                />
+                <BtnAction title="LOG IN" onPress={handlerLogin} />
 
             </View>
 
@@ -71,22 +57,9 @@ const styles = StyleSheet.create({
         fontWeight:'bold', 
         marginBottom:40,
     },
-    inputText:{
-        backgroundColor:'#313842',
-        borderRadius:20,
-        borderWidth:2, 
-        padding:20
+    text:{
+        marginVertical:20, 
+        fontSize:20, 
+        color:'#C7CBCC',
     },
-    btnStyle:{
-        backgroundColor: '#DB731E',
-        borderWidth: 2,
-        borderColor: '#DB731E', 
-        borderRadius: 30,
-    },
-    btnContainerStyle:{
-        width: '90%',
-        marginHorizontal: 50,
-        marginVertical: 10,
-    }
-
 });
