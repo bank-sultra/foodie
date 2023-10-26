@@ -5,6 +5,7 @@ export default function App() {
        <View>
            <Text>App </Text>
            <Text>ini hal baru</Text>
+           <tEXT>gANTOI</tEXT>
        </View>
    );
 };
