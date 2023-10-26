@@ -7,6 +7,7 @@ import Home from './src/screens/home';
 
 const Stack = createStackNavigator();
 const xyz = 'xyz'
+const xyz2 = 'xyz'
 
 export default function App() {
   return (
