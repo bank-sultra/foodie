@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screens/home';
 
 const Stack = createStackNavigator();
+const xyz = 'xyz'
 
 export default function App() {
   return (
