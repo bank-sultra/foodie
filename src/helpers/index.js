@@ -4,6 +4,7 @@ export default function App() {
    return (
        <View>
            <Text>App </Text>
+           <Text>ini hal baru</Text>
        </View>
    );
 };
