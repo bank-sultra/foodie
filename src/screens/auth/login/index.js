@@ -15,8 +15,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
     const handlerLogin = () => {
-        navigate('HomeNav');
-        console.log('Login');
+        navigate('Maps', {latitude: -3.962949, longitude: 122.542230}); 
     }
     
 

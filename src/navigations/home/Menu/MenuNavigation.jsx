@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react'; 
 import Cart from '../../../screens/home/menu/cart';
-import Maps from '../../../screens/maps';
+import Maps from '../../../screens/home/menu/maps';
 
 const Stack = createStackNavigator();
 
