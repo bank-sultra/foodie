@@ -1,17 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import AuthNavigation from './AuthNavigation';
-import HomeNavigation from './HomeNavigation';
+import AuthNavigation from './auth/AuthNavigation';
+import HomeNavigation from './home/HomeNavigation';
 
 const Stack = createStackNavigator();
 
 const Root = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="Auth" component={AuthNavigation} />
-                <Stack.Screen name="Home" component={HomeNavigation} />
+            <Stack.Navigator initialRouteName="HomeNav" screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="AuthNav" component={AuthNavigation} />
+                <Stack.Screen name="HomeNav" component={HomeNavigation} />
             </Stack.Navigator>
         </NavigationContainer>
     )
