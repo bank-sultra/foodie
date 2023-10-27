@@ -16,7 +16,7 @@ const HomeNavigation = () => {
                     headerRightContainerStyle:{marginEnd:20}
                 })}
             />
-            <Stack.Screen name="MenuNav" component={MenuNavigation} />
+            <Stack.Screen name="Menu" component={MenuNavigation} />
             <Stack.Screen name="History" component={History} />
         </Stack.Navigator>
     )

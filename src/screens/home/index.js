@@ -1,6 +1,6 @@
 import { View, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import {Text, Card, Button, Icon, ListItem, Avatar} from '@rneui/themed'
+import {Text, Card} from '@rneui/themed'
 import firestore from '@react-native-firebase/firestore';
 import { useQuery } from 'react-query';
 
@@ -41,58 +41,58 @@ const fetchData = async () => {
   return result;
 };
 
-export default function Home() {
+export default function Home({navigation}) {
     const { data } = useQuery('restauranList',  async () => await fetchData());
-    
     console.log("data => ", data)
-
     return (
         <ScrollView>
             <View style={styles.container}>
-
-                {/* <View style={{ marginStart:20, marginTop:10 }}>
-                    <Text>Restaurant disekitarmu</Text>
-                </View> */}
-
                 <Card>
                 <Card.Title>Restaurant disekitarmu</Card.Title>
                 <Card.Divider />
-                {/* <Card.Divider /> */}
-
                 {data?.map((u, i) => {
                     return (
-                        <View key={i} style={styles.user}>
-                        <Image
-                        style={styles.image}
-                        resizeMode="cover"
-                        source={{ uri: u.images }}
-                        />
-                        <View style={{flexDirection:'row'}}>
-                            <ListItem bottomDivider>
-                                <Text style={styles.name_restaurant}>
-                                    {u.restaurant_name} 
-                                    {"\n"}
-                                    {u?.menu?.map((m, j) => {
-                                        if(j==0){
-                                          return (
-                                              <Text key={j} style={styles.name_menus}>{m.name}, </Text>
+                      <View key={i} style={styles.user}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Menu')} >
+                          <Image
+                          style={styles.image}
+                          resizeMode="cover"
+                          source={{ uri: u.images }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Menu')} >
+                          {/* <View style={{flexDirection:'row'}}> */}
+                              {/* <ListItem bottomDivider> */}
+                                <View>
+                                    <Text style={styles.name_restaurant}>{u.restaurant_name} </Text>
+                                      {u?.menu?.map((m, j) => {
+                                          return(
+                                            <Text key={j} style={styles.name_menus}>{(j==0) ? m.name + ',' : m.name}</Text>
                                           )
-                                        }else{
-                                          return (
-                                              <Text key={j} style={styles.name_menus}>{m.name} </Text>
-                                          )
-                                        }
-                                    })}
-                                </Text>
-                            </ListItem>
-                        </View>
-
-                    </View>
+                                      })}
+                                </View>
+                              {/* </ListItem> */}
+                          {/* </View> */}
+                        </TouchableOpacity>
+                      </View>
                     );
                 })}
                 </Card>
 
-                <TouchableOpacity onPress={() => pushData()}><Text>tesss</Text></TouchableOpacity>
+                {/* <TouchableOpacity onPress={() => pushData()}><Text>tesss</Text></TouchableOpacity> */}
+            </View>
+            <View style={{
+              right: 10,
+              left: 10,
+              position: 'absolute',
+              bottom: 0,}}>
+              <TouchableOpacity style={{ backgroundColor:'#E67E22', padding:5, borderRadius:20}}>
+                <Text style={{ color:'white', paddingStart:10 }}>1 Item (s)</Text>
+                <View style={{ flexDirection:'row', justifyContent:'space-between' }}>
+                  <Text style={{ color:'white', paddingStart:10 }}>Delivery from Lorem Ipsum Dolor</Text>
+                  <Text style={{ color:'white', paddingEnd:10}}> 10.000 </Text>
+                </View>
+              </TouchableOpacity>
             </View>
         </ScrollView>
     )
@@ -101,6 +101,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        marginBottom:60
       },
       image: {
         width: 150,
@@ -113,7 +114,6 @@ const styles = StyleSheet.create({
       },
       name_restaurant: {
         fontSize: 16,
-        // marginTop: 5,
         fontWeight:'bold'
       },
       name_menus: {
