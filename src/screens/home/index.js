@@ -1,21 +1,5 @@
+import {Text, Card, Button, Icon, ListItem, Avatar} from '@rneui/themed'
 import { View, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import {Text, Card, Button, Icon, ListItem, Avatar} from '@rneui/themed'
-
-const users = [
-    {
-      name_restaurant: 'Kampung Bakau',
-      list_menus: 'Ikan bakar, Sea Food',
-      avatar: 'https://sultrademo.co/wp-content/uploads/2019/11/IMG_20191117_214931.jpg',
-    },
-    {
-      name_restaurant: 'Restaurant Fajar',
-      list_menus:'Stik, fried rice',
-      avatar:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFLMYnVVOD6hJp_Yxgm7r4F-QvLbnggSC-oL7AVDwF3yMSagBkZdB0yxQbDFQ5Uks3KKM&usqp=CAU',
-    },
-];
-import {Text, Card, Button, Icon, ListItem, Avatar} from '@rneui/themed'
 import firestore from '@react-native-firebase/firestore';
 import { useQuery } from 'react-query';
 
