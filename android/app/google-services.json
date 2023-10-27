@@ -1,13 +1,51 @@
 {
   "project_info": {
-    "project_number": "803823956166",
-    "project_id": "foodie-f7acc",
-    "storage_bucket": "foodie-f7acc.appspot.com"
+    "project_number": "225696195151",
+    "project_id": "bsultra-228cb",
+    "storage_bucket": "bsultra-228cb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:803823956166:android:720aeeb839af46256da7c7",
+        "mobilesdk_app_id": "1:225696195151:android:d2e37cbb077a598a08003a",
+        "android_client_info": {
+          "package_name": "com.day8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZhk4RqNjWeg6Z51uZkrSODymwlvt2bxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225696195151:android:1648e71c58b36d3408003a",
+        "android_client_info": {
+          "package_name": "com.day9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZhk4RqNjWeg6Z51uZkrSODymwlvt2bxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225696195151:android:3895dbab183e272608003a",
         "android_client_info": {
           "package_name": "com.foodie"
         }
@@ -15,7 +53,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDXCiOXd0bqXXoP8q70heLDV9I02CKDYaU"
+          "current_key": "AIzaSyCZhk4RqNjWeg6Z51uZkrSODymwlvt2bxs"
         }
       ],
       "services": {
